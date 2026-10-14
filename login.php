@@ -16,7 +16,7 @@ if (isset($_SESSION["host"])) {
 </head>
 <body>
   <header class="site-header">
-    <div class="logo">SplitYuk</div>
+    <h1 class="logo">SplitYuk</h1>
     <nav><a href="index.php">Beranda</a></nav>
   </header>
 
