@@ -11,12 +11,46 @@ if (!isset($_SESSION["daftarItem"])) {
   $_SESSION["daftarItem"] = [];
 }
 
-$folderTujuan = "uploads/";
+$folderTujuan = __DIR__ . "/uploads/";
 $namaFileBukti = "";
 
-if (isset($_FILES["bukti"]) && $_FILES["bukti"]["name"] != "") {
-  $namaFileBukti = $folderTujuan . basename($_FILES["bukti"]["name"]);
-  move_uploaded_file($_FILES["bukti"]["tmp_name"], $namaFileBukti);
+if (
+  isset($_FILES["buktiStruk"]) &&
+  $_FILES["buktiStruk"]["error"] !== UPLOAD_ERR_NO_FILE
+) {
+  $file = $_FILES["buktiStruk"];
+
+  if ($file["error"] !== UPLOAD_ERR_OK) {
+    die("Upload struk gagal. Kode error: " . $file["error"]);
+  }
+
+  if (!is_dir($folderTujuan)) {
+    if (!mkdir($folderTujuan, 0755, true)) {
+      die("Folder uploads gagal dibuat.");
+    }
+  }
+
+  $tipeFile = mime_content_type($file["tmp_name"]);
+
+  $ekstensiDiizinkan = [
+    "image/jpeg" => "jpg",
+    "image/png" => "png"
+  ];
+
+  if (!isset($ekstensiDiizinkan[$tipeFile])) {
+    die("Format file harus JPG atau PNG.");
+  }
+
+  $namaFile = bin2hex(random_bytes(8)) . "." .
+    $ekstensiDiizinkan[$tipeFile];
+
+  $lokasiTujuan = $folderTujuan . $namaFile;
+
+  if (!move_uploaded_file($file["tmp_name"], $lokasiTujuan)) {
+    die("Gagal menyimpan foto struk.");
+  }
+
+  $namaFileBukti = "uploads/" . $namaFile;
 }
 
 $itemBaru = [
