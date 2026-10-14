@@ -20,8 +20,7 @@ session_start();
   </header>
 
   <section class="hero">
-    <img src="assets/logo-splityuk.png" alt="Logo SplitYuk" width="80">
-    <h2>Nongkrong Bareng, Bayar Adil</h2>
+    <img src="logo-splityuk.jpg" alt="Logo SplitYuk" width="80">    <h2>Nongkrong Bareng, Bayar Adil</h2>
     <p>SplitYuk membantu kamu dan teman-teman membagi tagihan nongkrong tanpa ribet dan tanpa drama "siapa belum bayar".</p>
     <a href="login.php" class="btn-mulai">Mulai Sesi Patungan</a>
   </section>
