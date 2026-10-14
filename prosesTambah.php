@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 if (!isset($_SESSION["host"])) {
   header("Location: login.php");
   exit;
@@ -19,7 +22,7 @@ if (isset($_FILES["bukti"]) && $_FILES["bukti"]["name"] != "") {
 $itemBaru = [
   "nama" => $_POST["nama"],
   "harga" => $_POST["harga"],
-  "jumlahOrang" => $_POST["jumlahOrang"],
+  "jumlahOrang" => $_POST["JumlahOrang"],
   "status" => $_POST["status"],
   "bukti" => $namaFileBukti,
 ];
