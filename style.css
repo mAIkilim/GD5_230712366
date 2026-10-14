@@ -1,0 +1,100 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #faf7f2;
+  color: #2b2118;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  background-color: #3d348b;
+  color: white;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.site-header nav a {
+  color: white;
+  margin-left: 16px;
+  text-decoration: none;
+}
+
+.hero {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.btn-mulai,
+.btn-tambah {
+  display: inline-block;
+  background-color: #f35b04;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  margin-top: 12px;
+  border: none;
+  cursor: pointer;
+}
+
+main {
+  padding: 24px 32px;
+}
+
+.info-sesi {
+  text-align: center;
+  padding: 12px;
+}
+
+.ringkasan-total {
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #fff3e0;
+  color: #fdf1e4;
+  padding: 12px;
+  border-radius: 8px;
+  margin: 16px 0;
+}
+
+.daftar-item {
+  display: flex;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.kartu-item {
+  width: 280px;
+  flex-shrink: 0;
+  background: white;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  color: white;
+}
+
+.badge-lunas { background-color: #2ea44f; }
+.badge-dp { background-color: #c9840c; }
+.badge-belum { background-color: #cf222e; }
+
+.error {
+  color: #cf222e;
+  margin-bottom: 12px;
+}
