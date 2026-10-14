@@ -15,12 +15,14 @@ foreach ($_SESSION["daftarItem"] as $item) {
 ?>
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard - SplitYuk</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <header class="site-header">
     <h1 class="logo">SplitYuk</h1>
@@ -50,19 +52,22 @@ foreach ($_SESSION["daftarItem"] as $item) {
           <p>Jumlah Orang: <?php echo $item["jumlahOrang"]; ?></p>
 
           <?php
-            $hargaPerOrang = $item["harga"] / $item["jumlahOrang"];
+          $hargaPerOrang = $item["harga"] / $item["jumlahOrang"];
           ?>
           <p>Per Orang: Rp<?php echo number_format($hargaPerOrang, 0, ",", "."); ?></p>
 
           <?php
-            switch ($item["status"]) {
-              case "Lunas":
-                echo '<span class="badge badge-lunas">Lunas</span>';
-              case "DP":
-                echo '<span class="badge badge-dp">DP</span>';
-              case "Belum Bayar":
-                echo '<span class="badge badge-belum">Belum Bayar</span>';
-            }
+          switch ($item["status"]) {
+            case "Lunas":
+              echo '<span class="badge badge-lunas">Lunas</span>';
+              break;
+            case "DP":
+              echo '<span class="badge badge-dp">DP</span>';
+              break;
+            case "Belum Bayar":
+              echo '<span class="badge badge-belum">Belum Bayar</span>';
+              break;
+          }
           ?>
 
           <?php if (!empty($item["bukti"])) { ?>
@@ -78,4 +83,5 @@ foreach ($_SESSION["daftarItem"] as $item) {
     </div>
   </main>
 </body>
+
 </html>
