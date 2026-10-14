@@ -71,10 +71,12 @@ main {
   display: flex;
   gap: 16px;
   margin-top: 20px;
+  flex-wrap: wrap;
 }
 
 .kartu-item {
   width: 280px;
+  max-width: 100%;
   flex-shrink: 0;
   background: white;
   border-radius: 10px;
@@ -97,4 +99,14 @@ main {
 .error {
   color: #cf222e;
   margin-bottom: 12px;
+}
+
+@media (max-width: 600px) {
+  main {
+    padding: 20px 16px;
+  }
+
+  .kartu-item {
+    width: 100%;
+  }
 }
