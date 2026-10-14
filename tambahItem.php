@@ -7,12 +7,14 @@ if (!isset($_SESSION["host"])) {
 ?>
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tambah Item - SplitYuk</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <header class="site-header">
     <h1 class="logo">SplitYuk</h1>
@@ -41,7 +43,7 @@ if (!isset($_SESSION["host"])) {
         <input type="number" name="jumlahOrang" id="jumlahOrangItem" min="1" required>
       </p>
       <p>
-        <button type="button" onclick="hitungSplit()">Hitung Otomatis</button>
+        <button type="button" onclick="hitungPerOrang()">Hitung Otomatis</button>
       </p>
       <p id="hasilHitung"></p>
 
@@ -63,11 +65,23 @@ if (!isset($_SESSION["host"])) {
 
   <script>
     function hitungPerOrang() {
-      const harga = document.getElementById("hargaItem").value;
-      const jumlahOrang = document.getElementById("jumlahOrangItem").value;
+      const harga = Number(document.getElementById("hargaItem").value);
+      const jumlahOrang = Number(document.getElementById("jumlahOrangItem").value);
+      const hasil = document.getElementById("hasilHitung");
+
+      if (harga <= 0 || jumlahOrang <= 0 || !Number.isInteger(jumlahOrang)) {
+        hasil.innerText = "Masukkan harga dan jumlah orang yang valid.";
+        return;
+      }
+
       const perOrang = harga / jumlahOrang;
-      document.getElementById("hasilSplit").innerText = "Per orang: Rp" + perOrang;
+
+      hasil.innerText = "Per orang: Rp" +
+        perOrang.toLocaleString("id-ID", {
+          maximumFractionDigits: 2
+        });
     }
   </script>
 </body>
+
 </html>
