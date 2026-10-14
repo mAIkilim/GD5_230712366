@@ -23,7 +23,7 @@ if (!isset($_SESSION["host"])) {
   </header>
 
   <main>
-    <img src="assets/icon-split.png" alt="" width="40">
+    <img src="icon-split.png" alt="" width="40">
     <h1>Tambah Item Patungan</h1>
     <p><a href="dashboard.php">Kembali ke Dashboard</a></p>
 
