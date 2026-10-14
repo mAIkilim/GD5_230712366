@@ -22,7 +22,7 @@ if (isset($_FILES["bukti"]) && $_FILES["bukti"]["name"] != "") {
 $itemBaru = [
   "nama" => $_POST["nama"],
   "harga" => $_POST["harga"],
-  "jumlahOrang" => $_POST["JumlahOrang"],
+  "jumlahOrang" => $_POST["jumlahOrang"],
   "status" => $_POST["status"],
   "bukti" => $namaFileBukti,
 ];
